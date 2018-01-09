@@ -1,0 +1,20 @@
+{
+    "name": "kubikplugins/pugpress",
+    "description": "Use Pug (previously Jade) template engine in WordPress themes.",
+    "type": "wordpress-plugin",
+    "require": {
+        "pug-php/pug": "^3.1"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "license": "http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0",
+    "authors": [
+        {
+            "name": "Kubik Plugins",
+            "email": "support@kubikplugins.com"
+        }
+    ]
+}
