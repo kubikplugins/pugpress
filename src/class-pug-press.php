@@ -22,6 +22,7 @@ class Pug_Press {
 	/**
 	 * Undocumented class variable
 	 *
+	 * @since 0.0.1
 	 * @var string
 	 */
 	private $views_dir;
@@ -29,6 +30,7 @@ class Pug_Press {
 	/**
 	 * Undocumented class variable
 	 *
+	 * @since 0.0.1
 	 * @var array
 	 */
 	private $base_data;
@@ -36,12 +38,15 @@ class Pug_Press {
 	/**
 	 * A reference to the Pug template engine for PHP
 	 *
+	 * @since 0.0.1
 	 * @var object
 	 */
 	private $pug;
 
 	/**
 	 * Pug_Press Constructor
+	 *
+	 * @since 0.0.1
 	 */
 	public function __construct() {
 		$this->views_dir = template_path() . '/views/';
@@ -56,6 +61,7 @@ class Pug_Press {
 	/**
 	 * Undocumented function
 	 *
+	 * @since 0.0.1
 	 * @return void
 	 */
 	private function set_base_data() {
@@ -71,6 +77,7 @@ class Pug_Press {
 	/**
 	 * Undocumented function
 	 *
+	 * @since 0.0.1
 	 * @param string $function Function name.
 	 * @param array  $args     Function arguments.
 	 * @return string
@@ -86,6 +93,7 @@ class Pug_Press {
 	/**
 	 * Undocumented function
 	 *
+	 * @since 0.0.1
 	 * @param string $name Template filename.
 	 * @param array  $data Content for the template.
 	 * @return string

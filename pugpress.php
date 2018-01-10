@@ -31,6 +31,7 @@ require __DIR__ . '/vendor/autoload.php';
 /**
  * Undocumented function
  *
+ * @since 0.0.1
  * @param string $name Template filename.
  * @param array  $data Content for the template.
  * @return void
