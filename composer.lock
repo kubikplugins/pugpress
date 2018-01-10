@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a13b84e084e7a196c8cc07ffbbeac0b7",
+    "hash": "f2ee748454288c2ea93f4a4f77cb7c21",
     "content-hash": "6a6795041e91a16417c36b270227f824",
     "packages": [
         {
             "name": "js-phpize/js-phpize",
-            "version": "1.12.0",
+            "version": "1.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pug-php/js-phpize.git",
-                "reference": "0e13b055ea31d9655f98287c5131af1037dd8a6a"
+                "reference": "2205a932f7794cd87cc0e024208eaa1a1e54c89d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pug-php/js-phpize/zipball/0e13b055ea31d9655f98287c5131af1037dd8a6a",
-                "reference": "0e13b055ea31d9655f98287c5131af1037dd8a6a",
+                "url": "https://api.github.com/repos/pug-php/js-phpize/zipball/2205a932f7794cd87cc0e024208eaa1a1e54c89d",
+                "reference": "2205a932f7794cd87cc0e024208eaa1a1e54c89d",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 }
             ],
             "description": "Convert js-like syntax to standalone PHP code.",
-            "time": "2017-12-05 09:22:31"
+            "time": "2018-01-09 15:31:14"
         },
         {
             "name": "js-phpize/js-phpize-phug",
@@ -237,22 +237,22 @@
         },
         {
             "name": "phug/compiler",
-            "version": "0.5.16",
+            "version": "0.5.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phug-php/compiler.git",
-                "reference": "c0f1d450a683fb2d4c0b64ed782a3a469b2a5fad"
+                "reference": "39ed1f8e153e52a9b24e3e02eecab9feae1d9d40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phug-php/compiler/zipball/c0f1d450a683fb2d4c0b64ed782a3a469b2a5fad",
-                "reference": "c0f1d450a683fb2d4c0b64ed782a3a469b2a5fad",
+                "url": "https://api.github.com/repos/phug-php/compiler/zipball/39ed1f8e153e52a9b24e3e02eecab9feae1d9d40",
+                "reference": "39ed1f8e153e52a9b24e3e02eecab9feae1d9d40",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.0",
                 "phug/dependency-injection": "^1.1.2",
-                "phug/formatter": "^0.5.0",
+                "phug/formatter": "^0.5.37",
                 "phug/parser": "^0.5.0",
                 "phug/util": "^0.4.0"
             },
@@ -293,7 +293,7 @@
                 "template",
                 "views"
             ],
-            "time": "2017-12-28 12:49:51"
+            "time": "2018-01-10 17:26:45"
         },
         {
             "name": "phug/dependency-injection",
@@ -403,16 +403,16 @@
         },
         {
             "name": "phug/formatter",
-            "version": "0.5.36",
+            "version": "0.5.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phug-php/formatter.git",
-                "reference": "9183dd7f731d9d11a785b06e6ab67cbfd57ef140"
+                "reference": "2a0ed44f70358030af1c10190a1fbfae21e2e961"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phug-php/formatter/zipball/9183dd7f731d9d11a785b06e6ab67cbfd57ef140",
-                "reference": "9183dd7f731d9d11a785b06e6ab67cbfd57ef140",
+                "url": "https://api.github.com/repos/phug-php/formatter/zipball/2a0ed44f70358030af1c10190a1fbfae21e2e961",
+                "reference": "2a0ed44f70358030af1c10190a1fbfae21e2e961",
                 "shasum": ""
             },
             "require": {
@@ -460,7 +460,7 @@
                 "template",
                 "views"
             ],
-            "time": "2017-12-28 11:01:41"
+            "time": "2018-01-10 17:03:21"
         },
         {
             "name": "phug/js-transformer-filter",
