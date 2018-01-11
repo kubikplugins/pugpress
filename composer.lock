@@ -403,16 +403,16 @@
         },
         {
             "name": "phug/formatter",
-            "version": "0.5.37",
+            "version": "0.5.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phug-php/formatter.git",
-                "reference": "2a0ed44f70358030af1c10190a1fbfae21e2e961"
+                "reference": "d0cce2579bd4f1aeb85fdfe16448b5fa10718be4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phug-php/formatter/zipball/2a0ed44f70358030af1c10190a1fbfae21e2e961",
-                "reference": "2a0ed44f70358030af1c10190a1fbfae21e2e961",
+                "url": "https://api.github.com/repos/phug-php/formatter/zipball/d0cce2579bd4f1aeb85fdfe16448b5fa10718be4",
+                "reference": "d0cce2579bd4f1aeb85fdfe16448b5fa10718be4",
                 "shasum": ""
             },
             "require": {
@@ -460,7 +460,7 @@
                 "template",
                 "views"
             ],
-            "time": "2018-01-10 17:03:21"
+            "time": "2018-01-11 10:14:48"
         },
         {
             "name": "phug/js-transformer-filter",
