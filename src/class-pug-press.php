@@ -28,14 +28,6 @@ class Pug_Press {
 	private $views_dir;
 
 	/**
-	 * Undocumented class variable
-	 *
-	 * @since 0.0.1
-	 * @var array
-	 */
-	private $base_data;
-
-	/**
 	 * A reference to the Pug template engine for PHP
 	 *
 	 * @since 0.0.1
@@ -55,17 +47,16 @@ class Pug_Press {
 			'expressionLanguage' => 'js',
 			'basedir'            => $this->views_dir,
 		) );
-		$this->set_base_data();
 	}
 
 	/**
 	 * Undocumented function
 	 *
 	 * @since 0.0.1
-	 * @return void
+	 * @return array
 	 */
-	private function set_base_data() {
-		$this->base_data = [
+	private function get_base_data() {
+		return [
 			'wp_head'   => $this->output_buffer_contents( 'wp_head' ),
 			'wp_footer' => $this->output_buffer_contents( 'wp_footer' ),
 			'base'      => get_template_directory_uri() . '/',
@@ -100,7 +91,7 @@ class Pug_Press {
 	 */
 	public function render( $name, $data = array() ) {
 		$template = $this->views_dir . $name . '.pug';
-		$data     = array_merge( $this->base_data, $data );
+		$data     = array_merge( $this->get_base_data(), $data );
 		return $this->pug->render( $template, $data );
 	}
 }
