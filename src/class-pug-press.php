@@ -57,8 +57,8 @@ class Pug_Press {
 	 */
 	private function get_base_data() {
 		return [
-			'wp_head'   => $this->output_buffer_contents( 'wp_head' ),
-			'wp_footer' => $this->output_buffer_contents( 'wp_footer' ),
+			'wp_head'   => $this->get_output_buffer_contents( 'wp_head' ),
+			'wp_footer' => $this->get_output_buffer_contents( 'wp_footer' ),
 			'base'      => get_template_directory_uri() . '/',
 			'lang'      => get_bloginfo( 'language' ),
 			'charset'   => get_bloginfo( 'charset' ),
@@ -84,7 +84,7 @@ class Pug_Press {
 	 * @param array  $args     Function arguments.
 	 * @return string
 	 */
-	private function output_buffer_contents( $function, $args = array() ) {
+	private function get_output_buffer_contents( $function, $args = array() ) {
 		ob_start();
 		$function( $args );
 		$contents = ob_get_contents();
