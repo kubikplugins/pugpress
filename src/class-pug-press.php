@@ -69,6 +69,16 @@ class Pug_Press {
 	 * Undocumented function
 	 *
 	 * @since 0.0.1
+	 * @return string
+	 */
+	private function get_view( $name ) {
+		return $this->views_dir . $name . '.pug';
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @since 0.0.1
 	 * @param string $function Function name.
 	 * @param array  $args     Function arguments.
 	 * @return string
@@ -90,9 +100,8 @@ class Pug_Press {
 	 * @return string
 	 */
 	public function render( $name, $data = array() ) {
-		$template = $this->views_dir . $name . '.pug';
 		$data     = array_merge( $this->get_base_data(), $data );
-		return $this->pug->render( $template, $data );
+		return $this->pug->render( $this->get_view( $name ), $data );
 	}
 }
 
