@@ -507,16 +507,16 @@
         },
         {
             "name": "phug/lexer",
-            "version": "0.5.18",
+            "version": "0.5.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phug-php/lexer.git",
-                "reference": "40502ec95773210101cc4e67c118d0d47871db1e"
+                "reference": "912dc4ded2eac004e0a7c687c054d461310508f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phug-php/lexer/zipball/40502ec95773210101cc4e67c118d0d47871db1e",
-                "reference": "40502ec95773210101cc4e67c118d0d47871db1e",
+                "url": "https://api.github.com/repos/phug-php/lexer/zipball/912dc4ded2eac004e0a7c687c054d461310508f5",
+                "reference": "912dc4ded2eac004e0a7c687c054d461310508f5",
                 "shasum": ""
             },
             "require": {
@@ -563,7 +563,7 @@
                 "template",
                 "views"
             ],
-            "time": "2018-01-02 09:13:25"
+            "time": "2018-01-12 16:42:42"
         },
         {
             "name": "phug/parser",
