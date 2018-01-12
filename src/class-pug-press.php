@@ -101,7 +101,7 @@ class Pug_Press {
 	 * @return string
 	 */
 	public function render( $name, $data = array() ) {
-		$data     = array_merge( $this->get_base_data(), $data );
+		$data = array_merge( $this->get_base_data(), $data );
 		return $this->pug->render( $this->get_view( $name ), $data );
 	}
 }
