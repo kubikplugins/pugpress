@@ -20,14 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Pug_Press {
 	/**
-	 * Undocumented class variable
-	 *
-	 * @since 0.0.1
-	 * @var string
-	 */
-	private $views_dir;
-
-	/**
 	 * A reference to the Pug template engine for PHP
 	 *
 	 * @since 0.0.1
@@ -41,11 +33,10 @@ class Pug_Press {
 	 * @since 0.0.1
 	 */
 	public function __construct() {
-		$this->views_dir = template_path() . '/views/';
 		$this->pug       = new \Pug\Pug( array(
 			'pretty'             => true,
 			'expressionLanguage' => 'js',
-			'basedir'            => $this->views_dir,
+			'basedir'            => $this->get_views_dir(),
 		) );
 	}
 
@@ -69,11 +60,21 @@ class Pug_Press {
 	 * Undocumented function
 	 *
 	 * @since 0.0.1
+	 * @return string
+	 */
+	private function get_views_dir() {
+		return template_path() . '/views/';
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @since 0.0.1
 	 * @param string $name Template filename.
 	 * @return string
 	 */
 	private function get_view( $name ) {
-		return $this->views_dir . $name . '.pug';
+		return $this->get_views_dir() . $name . '.pug';
 	}
 
 	/**
