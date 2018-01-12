@@ -69,6 +69,7 @@ class Pug_Press {
 	 * Undocumented function
 	 *
 	 * @since 0.0.1
+	 * @param string $name Template filename.
 	 * @return string
 	 */
 	private function get_view( $name ) {
