@@ -33,7 +33,7 @@ class Pug_Press {
 	 * @since 0.0.1
 	 */
 	public function __construct() {
-		$this->pug       = new \Pug\Pug( array(
+		$this->pug = new \Pug\Pug( array(
 			'pretty'             => true,
 			'expressionLanguage' => 'js',
 			'basedir'            => $this->get_views_dir(),
