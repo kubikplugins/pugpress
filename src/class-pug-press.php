@@ -51,7 +51,7 @@ class Pug_Press {
 			'wp_head'   => $this->get_output_buffer_contents( 'wp_head' ),
 			'wp_footer' => $this->get_output_buffer_contents( 'wp_footer' ),
 			'base'      => get_template_directory_uri() . '/',
-			'lang'      => get_bloginfo( 'language' ),
+			'language'  => get_bloginfo( 'language' ),
 			'charset'   => get_bloginfo( 'charset' ),
 		];
 	}
