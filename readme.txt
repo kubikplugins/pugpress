@@ -1,5 +1,5 @@
 === PugPress ===
-Contributors: kubikplugins
+Contributors: kubikplugins, sandrodz
 Donate link: http://paypal.me/kubikplugins
 Tags: jade, pug, template-engine
 Requires at least: 4.4
