@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: PugPress
- * Plugin URI:  http://kubikplugins.com/
+ * Plugin URI:  https://github.com/kubikplugins/pugpress
  * Description: Use Pug (previously Jade) template engine in WordPress themes.
  * Version:     0.0.1
  * Author:      Kubik Ltd.
