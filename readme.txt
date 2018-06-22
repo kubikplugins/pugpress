@@ -18,7 +18,7 @@ Unfortunately WordPress theme architecture encourages mixing of logic with prese
 Using template-engine like pug it is possible to create better themes by forcing seperation of concerns.
 e.g. Default WordPress theme files like `single.php` become controllers as presentation is fully delegated to pug view files.
 
-* [PugPress-Starter-Theme](https://github.com/kubikplugins/pugpress-starter-theme) will help you get started.
+* [PugPress-Starter-Theme](https://github.com/kubikthemes/pugpress-starter-theme) will help you get started.
 * Active development of this plugin is handled [on GitHub](https://github.com/kubikplugins/pugpress).
 
 == Installation ==
@@ -28,7 +28,7 @@ This section describes how to install the plugin and get it working.
 1. Upload the plugin files to the `/wp-content/plugins/pugpress` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Use the Settings->PugPress screen to configure the plugin.
-4. Download [starter theme](https://github.com/kubikplugins/pugpress-starter-theme) and start developing.
+4. Download [starter theme](https://github.com/kubikthemes/pugpress-starter-theme) and start developing.
 
 == Changelog ==
 
