@@ -63,7 +63,7 @@ class Pug_Press {
 	 * @return string
 	 */
 	private function get_views_dir() {
-		return template_path() . '/views/';
+		return get_template_directory() . '/views/';
 	}
 
 	/**
