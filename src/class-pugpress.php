@@ -39,6 +39,10 @@ class PugPress {
 				'pretty'             => true,
 				'expressionLanguage' => 'js',
 				'basedir'            => $this->get_views_dir(),
+				'cache'              => $this->get_cache_dir(),
+				'upToDateCheck'      => true,
+				'debug'              => false,
+				'enable_profiler'    => false,
 			]
 		);
 	}
@@ -57,6 +61,16 @@ class PugPress {
 			'language'  => get_bloginfo( 'language' ),
 			'charset'   => get_bloginfo( 'charset' ),
 		];
+	}
+
+	/**
+	 * Get cache directory.
+	 *
+	 * @since 1.0.0
+	 * @return string
+	 */
+	public function get_cache_dir() {
+		return get_temp_dir() . str_replace( [ 'http:', 'https:' ], '', site_url() );
 	}
 
 	/**
