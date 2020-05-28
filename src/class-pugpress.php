@@ -34,7 +34,8 @@ class PugPress {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		$this->pug = new \Pug\Pug(
+		$options = apply_filters(
+			'pugpress_options',
 			[
 				'pretty'             => true,
 				'expressionLanguage' => 'js',
@@ -45,6 +46,8 @@ class PugPress {
 				'enable_profiler'    => false,
 			]
 		);
+
+		$this->pug = new \Pug\Pug( $options );
 	}
 
 	/**
@@ -54,13 +57,16 @@ class PugPress {
 	 * @return array
 	 */
 	private function get_base_data() {
-		return [
-			'wp_head'   => $this->get_output_buffer_contents( 'wp_head' ),
-			'wp_footer' => $this->get_output_buffer_contents( 'wp_footer' ),
-			'base'      => get_template_directory_uri() . '/',
-			'language'  => get_bloginfo( 'language' ),
-			'charset'   => get_bloginfo( 'charset' ),
-		];
+		return apply_filters(
+			'pugpress_base_data',
+			[
+				'wp_head'   => $this->get_output_buffer_contents( 'wp_head' ),
+				'wp_footer' => $this->get_output_buffer_contents( 'wp_footer' ),
+				'base'      => get_template_directory_uri() . '/',
+				'language'  => get_bloginfo( 'language' ),
+				'charset'   => get_bloginfo( 'charset' ),
+			]
+		);
 	}
 
 	/**
