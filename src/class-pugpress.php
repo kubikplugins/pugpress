@@ -7,7 +7,7 @@
  * @package     PugPress
  * @author      Kubik Ltd. http://kubikplugins.com/
  * @copyright   Copyright (c) Kubik Ltd. (support@kubikplugins.com)
- * @since       0.0.1
+ * @since       1.0.0
  * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
@@ -16,34 +16,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Pug_Press
+ * Main plugin class.
  */
-class Pug_Press {
+class PugPress {
+
 	/**
-	 * A reference to the Pug template engine for PHP
+	 * Pug template engine for PHP.
 	 *
-	 * @since 0.0.1
-	 * @var object
+	 * @since 1.0.0
+	 * @var Pug\Pug
 	 */
 	private $pug;
 
 	/**
-	 * Pug_Press Constructor
+	 * Constructor.
 	 *
-	 * @since 0.0.1
+	 * @since 1.0.0
 	 */
 	public function __construct() {
-		$this->pug = new \Pug\Pug( array(
-			'pretty'             => true,
-			'expressionLanguage' => 'js',
-			'basedir'            => $this->get_views_dir(),
-		) );
+		$this->pug = new \Pug\Pug(
+			[
+				'pretty'             => true,
+				'expressionLanguage' => 'js',
+				'basedir'            => $this->get_views_dir(),
+			]
+		);
 	}
 
 	/**
-	 * Undocumented function
+	 * Base data to pass to all template.
 	 *
-	 * @since 0.0.1
+	 * @since 1.0.0
 	 * @return array
 	 */
 	private function get_base_data() {
@@ -57,9 +60,9 @@ class Pug_Press {
 	}
 
 	/**
-	 * Undocumented function
+	 * Get pug directory.
 	 *
-	 * @since 0.0.1
+	 * @since 1.0.0
 	 * @return string
 	 */
 	private function get_views_dir() {
@@ -67,9 +70,9 @@ class Pug_Press {
 	}
 
 	/**
-	 * Undocumented function
+	 * Get pug template.
 	 *
-	 * @since 0.0.1
+	 * @since 1.0.0
 	 * @param string $name Template filename.
 	 * @return string
 	 */
@@ -78,30 +81,31 @@ class Pug_Press {
 	}
 
 	/**
-	 * Undocumented function
+	 * Return function content instead of echoeing it.
 	 *
-	 * @since 0.0.1
+	 * @since 1.0.0
 	 * @param string $function Function name.
 	 * @param array  $args     Function arguments.
 	 * @return string
 	 */
-	private function get_output_buffer_contents( $function, $args = array() ) {
+	private function get_output_buffer_contents( $function, $args = [] ) {
 		ob_start();
 		$function( $args );
 		$contents = ob_get_contents();
 		ob_end_clean();
+
 		return $contents;
 	}
 
 	/**
-	 * Undocumented function
+	 * Render pug template.
 	 *
-	 * @since 0.0.1
+	 * @since 1.0.0
 	 * @param string $name Template filename.
 	 * @param array  $data Content for the template.
 	 * @return string
 	 */
-	public function render( $name, $data = array() ) {
+	public function render( $name, $data = [] ) {
 		$data = array_merge( $this->get_base_data(), $data );
 		return $this->pug->render( $this->get_view( $name ), $data );
 	}

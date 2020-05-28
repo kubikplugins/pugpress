@@ -3,7 +3,7 @@
  * Plugin Name: PugPress
  * Plugin URI:  https://github.com/kubikplugins/pugpress
  * Description: Use Pug (previously Jade) template engine in WordPress themes.
- * Version:     0.0.1
+ * Version:     1.0.0
  * Author:      Kubik Ltd.
  * Author URI:  http://kubikplugins.com/
  * License:     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
@@ -17,7 +17,7 @@
  * @package     PugPress
  * @author      Kubik Ltd. http://kubikplugins.com/
  * @copyright   Copyright (c) Kubik Ltd. (support@kubikplugins.com)
- * @since       0.0.1
+ * @since       1.0.0
  * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
@@ -25,20 +25,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( file_exists( $autoload = __DIR__ . '/vendor/autoload.php' ) ) {
-	require $autoload;
+$pugpress_autoload = __DIR__ . '/vendor/autoload.php';
+
+if ( file_exists( $pugpress_autoload ) ) {
+	require $pugpress_autoload;
 }
 
+$pugpress = new \PugPress();
+
 /**
- * Undocumented function
+ * Render pug template.
  *
- * @since 0.0.1
+ * @since 1.0.0
  * @param string $name Template filename.
  * @param array  $data Content for the template.
  * @return void
  */
-function pugpress_render( $name, $data = array() ) {
-	$pugpress = new \Pug_Press();
-	echo $pugpress->render( $name, $data );
+function pugpress_render( $name, $data = [] ) {
+	global $pugpress;
+	echo $pugpress->render( $name, $data ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
