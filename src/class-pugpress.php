@@ -21,12 +21,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 class PugPress {
 
 	/**
-	 * Pug template engine for PHP.
+	 * Pug engine options.
 	 *
 	 * @since 1.0.0
-	 * @var Pug\Pug
+	 * @var array
 	 */
-	private $pug;
+	public $options;
 
 	/**
 	 * Constructor.
@@ -34,7 +34,8 @@ class PugPress {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		$options = apply_filters(
+
+		$this->options = apply_filters(
 			'pugpress_options',
 			[
 				'pretty'             => true,
@@ -47,7 +48,6 @@ class PugPress {
 			]
 		);
 
-		$this->pug = new \Pug\Pug( $options );
 	}
 
 	/**
@@ -57,6 +57,7 @@ class PugPress {
 	 * @return array
 	 */
 	private function get_base_data() {
+
 		return apply_filters(
 			'pugpress_base_data',
 			[
@@ -67,6 +68,7 @@ class PugPress {
 				'charset'   => get_bloginfo( 'charset' ),
 			]
 		);
+
 	}
 
 	/**
@@ -123,11 +125,10 @@ class PugPress {
 	 * @since 1.0.0
 	 * @param string $name Template filename.
 	 * @param array  $data Content for the template.
-	 * @return string
 	 */
 	public function render( $name, $data = [] ) {
 		$data = array_merge( $this->get_base_data(), $data );
-		return $this->pug->render( $this->get_view( $name ), $data );
+		\Pug\Facade::displayFile( $this->get_view( $name ), $data, $this->options );
 	}
 }
 

@@ -43,6 +43,6 @@ $pugpress = new \PugPress();
  */
 function pugpress_render( $name, $data = [] ) {
 	global $pugpress;
-	echo $pugpress->render( $name, $data ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	$pugpress->render( $name, $data ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
