@@ -35,19 +35,32 @@ class PugPress {
 	 */
 	public function __construct() {
 
-		$this->options = apply_filters(
-			'pugpress_options',
+		$this->set_options();
+
+	}
+
+	/**
+	 * Set pug engine options.
+	 *
+	 * @since 1.0.0
+	 */
+	public function set_options() {
+
+		$options_production = apply_filters(
+			'pugpress_options_production',
 			[
-				'pretty'             => true,
 				'expressionLanguage' => 'js',
 				'basedir'            => $this->get_views_dir(),
-				'cache'              => $this->get_cache_dir(),
-				'upToDateCheck'      => true,
+				'cache_dir'          => $this->get_cache_dir(),
+				'up_to_date_check'   => true,
 				'debug'              => false,
 				'enable_profiler'    => false,
 			]
 		);
 
+		// TODO: Add $options_development.
+
+		$this->options = apply_filters( 'pugpress_options', $options_production );
 	}
 
 	/**
