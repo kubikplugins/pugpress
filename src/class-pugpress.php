@@ -21,6 +21,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 class PugPress {
 
 	/**
+	 * Load dev env Pug engine options.
+	 *
+	 * @since 1.0.0
+	 * @var bool
+	 */
+	public $dev_env = false;
+
+	/**
+	 * Do not load Pug engine if a file is available in the cache.
+	 *
+	 * @since 1.0.0
+	 * @var bool
+	 */
+	public $optimize = false;
+
+	/**
 	 * Pug engine options.
 	 *
 	 * @since 1.0.0
@@ -58,9 +74,18 @@ class PugPress {
 			]
 		);
 
-		// TODO: Add $options_development.
+		$options_development = apply_filters(
+			'pugpress_options_development',
+			[
+				'expressionLanguage' => 'js',
+				'basedir'            => $this->get_views_dir(),
+				'cache'              => false,
+				'debug'              => true,
+				'enable_profiler'    => true,
+			]
+		);
 
-		$this->options = apply_filters( 'pugpress_options', $options_production );
+		$this->options = apply_filters( 'pugpress_options', $this->dev_env ? $options_development : $options_production );
 	}
 
 	/**
@@ -141,7 +166,12 @@ class PugPress {
 	 */
 	public function render( $name, $data = [] ) {
 		$data = array_merge( $this->get_base_data(), $data );
-		\Pug\Facade::displayFile( $this->get_view( $name ), $data, $this->options );
+
+		if ( $this->optimize ) {
+			\Pug\Optimizer::call( 'displayFile', [ $this->get_view( $name ), $data ], $this->options );
+		} else {
+			\Pug\Facade::displayFile( $this->get_view( $name ), $data, $this->options );
+		}
 	}
 }
 
