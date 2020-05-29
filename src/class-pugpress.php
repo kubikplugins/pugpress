@@ -100,7 +100,7 @@ class PugPress {
 			'pugpress_base_data',
 			[
 				'head'     => $this->get_output_buffer_contents( 'wp_head' ),
-				'footer'   => $this->get_output_buffer_contents( 'wp_footer' ),
+				'foot'     => $this->get_output_buffer_contents( 'wp_footer' ),
 				'language' => get_bloginfo( 'language' ),
 				'charset'  => get_bloginfo( 'charset' ),
 			]
