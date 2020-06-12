@@ -162,9 +162,12 @@ class PugPress {
 	 * @since 1.0.0
 	 * @param string $name Template filename.
 	 * @param array  $data Content for the template.
+	 * @param bool   $base_data Add base data to template content.
 	 */
-	public function render( $name, $data = [] ) {
-		$data = array_merge( $this->get_base_data(), $data );
+	public function render( $name, $data = [], $base_data = true ) {
+		if ( $base_data ) {
+			$data = array_merge( $this->get_base_data(), $data );
+		}
 
 		if ( $this->optimize ) {
 			\Pug\Optimizer::call( 'displayFile', [ $this->get_view( $name ), $data ], $this->options );
