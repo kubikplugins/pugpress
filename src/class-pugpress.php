@@ -99,10 +99,11 @@ class PugPress {
 		return apply_filters(
 			'pugpress_base_data',
 			[
-				'head'     => $this->get_output_buffer_contents( 'wp_head' ),
-				'foot'     => $this->get_output_buffer_contents( 'wp_footer' ),
-				'language' => get_bloginfo( 'language' ),
-				'charset'  => get_bloginfo( 'charset' ),
+				'head'       => $this->get_output_buffer_contents( 'wp_head' ),
+				'foot'       => $this->get_output_buffer_contents( 'wp_footer' ),
+				'language'   => get_bloginfo( 'language' ),
+				'charset'    => get_bloginfo( 'charset' ),
+				'body_class' => $this->get_output_buffer_contents( 'wp_footer' ),
 			]
 		);
 
